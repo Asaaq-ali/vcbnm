@@ -18,7 +18,6 @@ from config import BANNED_USERS, OWNER_ID
 from strings import get_command, get_string
 from AnonXMusic import Telegram, YouTube, app
 from AnonXMusic.misc import SUDOERS
-from AnonXMusic.plugins.play.play import del_plist_msg
 from AnonXMusic.plugins.sudo.sudoers import sudoers_list
 from AnonXMusic.utils.database import (add_served_chat,
                                        add_served_user,
