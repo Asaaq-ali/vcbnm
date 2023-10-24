@@ -18,7 +18,6 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
        ],""
   )
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 async def khalid(client: Client, message: Message):
