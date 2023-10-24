@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from strings import get_command
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from YukkiMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
                             InlineKeyboardMarkup, Message)
@@ -13,26 +13,25 @@ from typing import Union
 from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import InputMediaPhoto, InputMediaVideo
 from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
-from YukkiMusic import app
+from AnonXMusic import app
 import config
-from config import BANNED_USERS
-from config.config import OWNER_ID
+from config import BANNED_USERS, OWNER_ID
 from strings import get_command, get_string
-from YukkiMusic import Telegram, YouTube, app
-from YukkiMusic.misc import SUDOERS
-from YukkiMusic.plugins.play.play import del_plist_msg
-from YukkiMusic.plugins.sudo.sudoers import sudoers_list
-from YukkiMusic.utils.database import (add_served_chat,
+from AnonXMusic import Telegram, YouTube, app
+from AnonXMusic.misc import SUDOERS
+from AnonXMusic.plugins.play.play import del_plist_msg
+from AnonXMusic.plugins.sudo.sudoers import sudoers_list
+from AnonXMusic.utils.database import (add_served_chat,
                                        add_served_user,
                                        blacklisted_chats,
                                        get_assistant, get_lang,
                                        get_userss, is_on_off,
                                        is_served_private_chat)
-from YukkiMusic.utils.decorators.language import LanguageStart
-from YukkiMusic.utils.inline import (help_pannel, private_panel,
+from AnonXMusic.utils.decorators.language import LanguageStart
+from AnonXMusic.utils.inline import (help_pannel, private_panel,
                                      start_pannel)
 
-from YukkiMusic import check_client
+from AnonXMusic import check_client
 
 
 @app.on_callback_query(filters.regex("tt"))
