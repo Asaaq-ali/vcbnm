@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram import Client, filters
 from config import BANNED_USERS
-from strings import get_command
+
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
