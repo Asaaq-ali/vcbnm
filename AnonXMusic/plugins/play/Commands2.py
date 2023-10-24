@@ -14,7 +14,6 @@ from config import SUPPORT_CHANNEL, SUPPORT_CHAT
 from AnonXMusic import app
 import config
 from config import BANNED_USERS, OWNER_ID
-from strings import get_command, get_string
 from AnonXMusic import Telegram, YouTube, app
 from AnonXMusic.misc import SUDOERS
 from AnonXMusic.plugins.sudo.sudoers import sudoers_list
