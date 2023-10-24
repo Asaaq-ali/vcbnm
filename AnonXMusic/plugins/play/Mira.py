@@ -1,6 +1,5 @@
 import asyncio
 from pyrogram import Client, filters
-from strings import get_command
 from AnonXMusic.utils.decorators import AdminActual
 from pyrogram.types import (
     CallbackQuery,
