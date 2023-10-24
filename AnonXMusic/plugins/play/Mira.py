@@ -154,7 +154,7 @@ async def down(client, message):
           m = await message.reply("**- ابشر تم اخفاء الازرار بنجاح\n- لو تبي تطلعها مرة ثانية اكتب سهى**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & command(["كيفية استخدام سهى"],""))
+@app.on_message(filters.group & filters.command(["كيفية استخدام سهى"],""))
 async def addbot(client: Client, message: Message):
     await message.reply_text(f"""- **هلا والله ياعيني عشان تفعل بوت سهى اتبع الخطوات الي بالاسفل**
 1 • ارفعه مشرف بكل الصلاحيات 
@@ -177,7 +177,7 @@ async def addbot(client: Client, message: Message):
 
 
 
-@app.on_message(filters.group & command(["سوررس"],""))
+@app.on_message(filters.group & filters.command(["سوررس"],""))
 async def addbot(client: Client, message: Message):
     await message.reply_text(f"""**- اهلين فيك بسورس سهى ياحلو
 • لو تبي تنصب مثل هالبوت تواصل مع مطور السورس
@@ -227,7 +227,7 @@ REPLY_MESSAGE_BUTTONSS = [
 ]
 
   
-@app.on_message(filters.group & command(["اوامر سهى"],""))
+@app.on_message(filters.group & filters.command(["اوامر سهى"],""))
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
@@ -238,7 +238,7 @@ async def com(_, message: Message):
 
 
 
-@app.on_message(filters.group & command(""))
+@app.on_message(filters.group & filters.command(""))
 async def bask(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True)
@@ -248,7 +248,7 @@ async def bask(_, message: Message):
         )
 
 
-@app.on_message(filters.group & command(["منصات الاغاني"],""))
+@app.on_message(filters.group & filters.command(["منصات الاغاني"],""))
 async def mnsat(client: Client, message: Message):
     await message.reply_text(f"""** اهلين فيك في قسم تشغيل المنصات
 - المنصات المدعومة هي ↓
@@ -273,7 +273,7 @@ async def mnsat(client: Client, message: Message):
         disable_web_page_preview=True
     )
 
-@app.on_message(filters.group & command(["اوامر الجروبات"],""))
+@app.on_message(filters.group & filters.command(["اوامر الجروبات"],""))
 async def laksk(client: Client, message: Message):
     await message.reply_text(f"""\n\n\n╭── • [𝘀𝗼𝗵𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/Mlze1bot) • ──╮\n\n ✧ **اوامر التشغيل بالجروبات**\n\n• **سهى شغلي + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني فالمجموعة\n\n• **سهى طفيها** او ** ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• **سهى الي بعده** او **تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **سهى اص** او **اسكتي**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **سهى تكلمي**\n-› لالغاء الكتم واكمال التشغيل\n\n• **سهى ايقاف مؤقت** او **ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **سهى كملي** او **استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝘀𝗼𝗵𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/Mlze1bot) • ──╯""",
         reply_markup=InlineKeyboardMarkup(
@@ -291,7 +291,7 @@ async def laksk(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.group & command(["اوامر القنوات"],""))
+@app.on_message(filters.group & filters.command(["اوامر القنوات"],""))
 async def channvom(client: Client, message: Message):
     await message.reply_text(f"""\n\n╭── • [𝘀𝗼𝗵𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/Mlze1bot) • ──╮\n\n ✧ **اوامر التشغيل بالقنوات**\n\n• **ق تشغيل + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني بالقناة\n\n• **ق ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• **ق تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **ق اص**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **ق كملي**\n-› لالغاء الكتم واكمال التشغيل\n\n• **ق ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **ق استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝘀𝗼𝗵𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/Mlze1bot) • ──╯""",
         reply_markup=InlineKeyboardMarkup(
@@ -310,7 +310,7 @@ async def channvom(client: Client, message: Message):
 
 
 
-@app.on_message(filters.group & command(["طريقة البحث"],""))
+@app.on_message(filters.group & filters.command(["طريقة البحث"],""))
 async def dowmmr(client: Client, message: Message):
     await message.reply_text(f"""اهلين فيك في قسم التحميل ♪
 للبحث عن اغنية او فيديو استخدم الامر التالي ↓
@@ -331,7 +331,7 @@ async def dowmmr(client: Client, message: Message):
         disable_web_page_preview=True
     )
 
-@app.on_message(filters.group & command(["حفظ التشغيل"],""))
+@app.on_message(filters.group & filters.command(["حفظ التشغيل"],""))
 async def dowhmr(client: Client, message: Message):
     await message.reply_text(f"""✧ **اهلين فيك في قسم حفظ التشغيل**\n\n- **حفظ التشغيل هو حفظ الاغاني الي اشتغلت بالمجموعة وحفظها يعني انك تقدر تشغلها بدون ما ترجع تبحث عنها مرة ثانية وتبقى محفوظة لك فقط**\n\n- عشان تحفظ الاغنية او المُشغل الحالي بالمكالمة لازم تضغط على زر -› ( **حفظ التشغيل** )\n\n- عشان تشوف الاغاني او الصوتيات الي حفظتها اكتب امر -› ( **قائمة تشغيلي** )\n\n- وطريقة تشغيل قائمتك تكتب فقط امر -› ( **تشغيل قائمتي** )\n\n- طريقة حذف اغنية او مقطع من محفوظاتك تكتب امر -› ( **حذف تشغيلي** ) وتكمل الخطوات بخاص البوت ..\n\n✶ **ملاحظة : اذا حفظت اغنية بتكون محفوظة عندك فقط يعني كل شخص عنده قائمة تشغيل خاصة فيه ومحد يقدر يحفظ اغنية عندك والعكس ايضا\n✶ لو ما فهمت تابع الفيديو الي فوق عشان تفهم اكثر ❤️**""",
         reply_markup=InlineKeyboardMarkup(
@@ -348,7 +348,7 @@ async def dowhmr(client: Client, message: Message):
         disable_web_page_preview=True
     )
 
-@app.on_message(filters.group & command(["طريقة ربط القنوات"],""))
+@app.on_message(filters.group & filters.command(["طريقة ربط القنوات"],""))
 async def dowhmo(client: Client, message: Message):
     await message.reply_text("""- هلا والله\n◌**عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌** :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { **ربط + يوزر القناة** }\n3 -› **اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل**..""",
         reply_markup=InlineKeyboardMarkup(
