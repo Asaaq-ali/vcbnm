@@ -11,7 +11,7 @@ from youtubesearchpython.__future__ import VideosSearch
 from typing import Union
 from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import InputMediaPhoto, InputMediaVideo
-from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
+from config import SUPPORT_CHANNEL, SUPPORT_GROUP
 from AnonXMusic import app
 import config
 from config import BANNED_USERS, OWNER_ID
