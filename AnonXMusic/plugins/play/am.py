@@ -10,11 +10,13 @@ from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
 from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-@app.on_message(command(
+@app.on_message(
+  filters.command(
       [
-      "ميوزك", 
-      "ميووزك",    
-      ],"")
+         "ميوزك", 
+         "ميووزك",    
+       ],""
+  )
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
