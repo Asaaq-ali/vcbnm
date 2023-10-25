@@ -143,7 +143,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^سهى$"))
+@app.on_message(filters.regex("^ميوزك$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         photo=config.DRTYU_VENUE,
