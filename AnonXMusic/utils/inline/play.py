@@ -69,7 +69,7 @@ def stream_markup_timer(_, chat_id, played, dur):
             )
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
-        ]
+        [
         InlineKeyboardButton(text=_["S_S_G_B_4"], url=config.SUPPORT_CHANNEL)
         ], 
         ] 
@@ -86,7 +86,7 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="⏹", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
-        ]
+        [
         InlineKeyboardButton(text=_["S_S_G_B_4"], url=config.SUPPORT_CHANNEL)
         ], 
         ]  
