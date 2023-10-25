@@ -23,7 +23,9 @@ ydl_opts = {
 
 
 
-@app.on_message(filters.command(["بحث","يوت","تحميل صوت","yt"],""))
+@app.on_message(filters.command(["بحث","يوت","تحميل صوت","yt"],"") 
+    & filters.group
+    & ~BANNED_USERS)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("✧ <b>ابشر جاري البحث ..</b>")
