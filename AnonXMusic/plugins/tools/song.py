@@ -6,6 +6,7 @@ import requests
 import wget
 import yt_dlp
 
+from filters import command
 from config import BANNED_USERS
 from pyrogram import Client, filters
 from AnonXMusic import app
@@ -26,8 +27,7 @@ ydl_opts = {
 
 
 @app.on_message(filters.command(["بحث","يوت","تحميل صوت","yt"],"") 
-    & filters.group
-    & ~BANNED_USERS)
+    & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("✧ <b>ابشر جاري البحث ..</b>")
