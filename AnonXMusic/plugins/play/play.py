@@ -35,7 +35,7 @@ from config import BANNED_USERS, lyrical
             "cplay",
             "cvplay",
             "فيديو",
-            "vplayforce",
+            "ق تشغيل",
             "cplayforce",
             "cvplayforce",
         ],""
