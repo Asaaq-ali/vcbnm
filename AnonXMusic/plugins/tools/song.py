@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 import os
 
 import requests
-import wget
 import yt_dlp
 from pyrogram import Client, filters
 from AnonXMusic import app
