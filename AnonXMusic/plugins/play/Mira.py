@@ -151,7 +151,7 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- ابشر تم اخفاء الازرار بنجاح\n- لو تبي تطلعها مرة ثانية اكتب سهى**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("✧ <u> ابشر تم اخفاء الازرار بنجاح</u>\n✧ <b> لو تبي تطلعها مرة ثانية اكتب سهى</b>", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 @app.on_message(filters.group & filters.command(["كيفية استخدام سهى"],""))
