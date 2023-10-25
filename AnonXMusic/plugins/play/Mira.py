@@ -16,12 +16,12 @@ from pyrogram.types import (
 from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from config import BANNED_USERS
 
-#@app.on_message(filters.regex("^$") & filters.group & ~BANNED_USERS) 
-#@AdminRightsCheck
-#async def khalid(client: Client, message: Message):
-   # user = message.from_user.mention
-  #  await message.reply_text(f"""✧ <b> اهلين </b> {user} !\n✧ <b> اضغط الزر عشان تشوف اوامر سهى</b>**""",
-#        reply_markup=InlineKeyboardMarkup(
+@app.on_message(filters.regex("^$") & filters.group & ~BANNED_USERS) 
+@AdminRightsCheck
+async def khalid(client: Client, message: Message):
+    user = message.from_user.mention
+    await message.reply_text(f"""✧ <b> اهلين </b> {user} !\n✧ <b> اضغط الزر عشان تشوف اوامر سهى</b>**""",
+        reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
@@ -33,13 +33,13 @@ from config import BANNED_USERS
 
 
 
-# @app.on_message(filters.regex("^سهى الاحصائيات$") & filters.user(2089102006))
+@app.on_message(filters.regex("^سهى الاحصائيات$") & filters.user(2089102006))
 async def ahtek(client: Client, message: Message):
     m_reply = await message.reply_text(f"✧ <b> اهلين مطوري ارحب</b>\n✧ <b> هذي احصائيات سهى يا روحي :</b>\n\n-› عدد المشتركين : 12478\n-› عدد المجموعات : 11346\n\n• تم زيادة 1204 مشترك ونقص 2103 مجموعة  في اخر 24 ساعة\n\n- عدد الطرد من بوتات اخرى : 843\n- طرد يدوي : 1302\n\n╼╾")
     await m_reply_text("")
 
 
-# @app.on_message(filters.command("","."))
+@app.on_message(filters.command("","."))
 def vgdg(client,message):
         message.reply_text(
             f"""✧ Welcome Baby,
@@ -60,8 +60,8 @@ def vgdg(client,message):
 
 
 
-# @app.on_message(filters.regex("^رابط الحذف$"))
-# async def delet(client: Client, message: Message):
+@app.on_message(filters.regex("^رابط الحذف$"))
+async def delet(client: Client, message: Message):
     await message.reply_text(f"""✧ <b> اهلين ياحلو</b>\n✧ <b> هذي روابط حذف جميع مواقع التواصل بالتوفيق</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
@@ -145,8 +145,8 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-# @app.on_message(filters.regex("^ميوزك$") & filters.group & ~BANNED_USERS)
-# @AdminRightsCheck
+@app.on_message(filters.regex("^ميوزك$") & filters.group & ~BANNED_USERS)
+@AdminRightsCheck
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         photo=config.DRTYU_VENUE,
