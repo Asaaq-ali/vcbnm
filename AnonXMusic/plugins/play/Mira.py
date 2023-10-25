@@ -1,8 +1,8 @@
 import asyncio
 
 from pyrogram import Client, filters
-
 import config
+from AnonXMusic.utils.decorators import AdminRightsCheck
 from AnonXMusic.utils.decorators import AdminActual
 from pyrogram.types import (
     CallbackQuery,
@@ -14,8 +14,10 @@ from pyrogram.types import (
     Message,
 )
 from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from config import BANNED_USERS
 
-@app.on_message(filters.regex("^$"))
+@app.on_message(filters.regex("^$") & filters.group & ~BANNED_USERS) 
+@AdminRightsCheck
 async def khalid(client: Client, message: Message):
     user = message.from_user.mention
     await message.reply_text(f"""✧ <b> اهلين </b> {user} !\n✧ <b> اضغط الزر عشان تشوف اوامر سهى</b>**""",
@@ -143,7 +145,8 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^ميوزك$"))
+@app.on_message(filters.regex("^ميوزك$") & filters.group & ~BANNED_USERS)
+@AdminRightsCheck
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         photo=config.DRTYU_VENUE,
