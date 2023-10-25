@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 import os
 
 import requests
+import wget
 import yt_dlp
 from pyrogram import Client, filters
 from AnonXMusic import app
@@ -25,7 +26,7 @@ ydl_opts = {
 @app.on_message(filters.command(["بحث","يوت","تحميل صوت","yt"],"") & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
-    m = message.reply("- **ابشر جاري البحث ..**")
+    m = message.reply("✧ <b>ابشر جاري البحث ..</b>")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -46,12 +47,12 @@ def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"✧ [𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂](t.me/Mlze1bot)"
+        rep = f"✧ <b>[𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂](t.me/Mlze1bot)</b>"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("- **جاري الارسال ..**")
+        m.edit("✧ <b>جاري الارسال ..</b>")
         message.reply_audio(
             audio_file,
             caption=rep,
@@ -101,12 +102,12 @@ def song232(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**- Ch** [تحديثات سهى ♪](t.me/Mlze1bot)"
+        rep = f"✧ <b>-Ch </b> [تحديثات سهى ♪](https://t.me/Mlze1bot)"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("- **جاري الارسال ..**")
+        m.edit("✧ <b>جاري الارسال ..</b>")
         message.reply_audio(
             audio_file,
             caption=rep,
