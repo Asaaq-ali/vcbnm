@@ -13,8 +13,8 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 @app.on_message(
   filters.command(
       [
-         "ميوزك", 
-         "ميووزك",    
+         "دينا", 
+         "ميوزك",    
        ],""
   )
     & filters.group
@@ -23,7 +23,7 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 async def khalid(client: Client, message: Message):
     await message.reply_video(
         video=f"https://telegra.ph/file/94c43633525702295679d.mp4",
-        caption=f"""✧ اهلين فيك في اوامر بوت سهى\n\n -› **جميع اوامر البوت موجودة بالقائمة هذي ، اضغط الازرار الي تحت واستكشف ياوحش**\n\n• Developer -› [𝑲𝒉𝒂𝒍𝒆𝒅](t.me/c_c_1)\n• Channel -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝑴𝒊𝒓𝒂](t.me/NvvvC)""",
+        caption=f"""✧ اهلين فيك في اوامر بوت دينا\n\n -› جميع اوامر البوت موجودة بالقائمة هذي ، اضغط الازرار الي تحت واستكشف ياوحش\n\n• Developer -› [ASAAQ]\n• Channel -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂]""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -31,7 +31,7 @@ async def khalid(client: Client, message: Message):
                         "منصات الاغاني", callback_data=f"ko"),
                 ],[
                     InlineKeyboardButton(
-                        "اوامر المجموعة", callback_data=f"ddd"),
+                        "اوامر الجروبات", callback_data=f"ddd"),
 
                     InlineKeyboardButton(
                         "اوامر القنوات", callback_data=f"tt"),
@@ -52,7 +52,7 @@ async def khalid(client: Client, message: Message):
                 ],[
 
                     InlineKeyboardButton(
-                        "تحديثات سهى 🥢", url=f"https://t.me/NvvvC"),
+                        "تحديثات دينا 🥢", url=f"https://t.me/NvvvC"),
 
                 ],
             ]
