@@ -143,7 +143,7 @@ REPLY_MESSAGE_BUTTONS = [
 @app.on_message(filters.regex("^سهى$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
-        video = DRTYU_VENUE
+        photo=config.DRTYU_VENUE,
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
         await message.reply(
               text=text,
@@ -201,7 +201,7 @@ async def addbot(client: Client, message: Message):
     )
 
 
-DRTYU_VENUE = f"https://telegra.ph/file/94c43633525702295679d.mp4"
+
 
 REPLY_MESSAGEE = "✧ <b> هلا فيك في قسم اوامر سهى</b>"
 
