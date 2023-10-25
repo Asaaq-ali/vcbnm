@@ -240,7 +240,7 @@ async def com(_, message: Message):
 
 @app.on_message(filters.group & filters.command(""))
 async def bask(_, message: Message):             
-       text = REPLY_MESSAGE
+        text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True)
         await message.reply(
               text=text,
