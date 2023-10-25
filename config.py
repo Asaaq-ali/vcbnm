@@ -115,7 +115,4 @@ if SUPPORT_CHAT:
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
         )
-#######gshssjdjdjdj
 
-bot = Client(STRING_SESSION, API_ID, API_HASH, plugins=dict(root="MusicTop"))
-call_py = PyTgCalls(bot)
