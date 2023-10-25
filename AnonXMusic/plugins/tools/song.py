@@ -5,6 +5,8 @@ import os
 import requests
 import wget
 import yt_dlp
+
+from config import BANNED_USERS
 from pyrogram import Client, filters
 from AnonXMusic import app
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
