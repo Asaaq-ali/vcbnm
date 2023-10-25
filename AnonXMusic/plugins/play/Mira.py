@@ -101,7 +101,7 @@ async def kstr(client: Client, message: Message):
     )
 
 
-REPLY_MESSAGE = "- اهلين ياحلو تحكم من الازرار اسفل"
+REPLY_MESSAGE = "✧ <b> اهلين ياحلو تحكم من الازرار اسفل </b>"
 
 
 
