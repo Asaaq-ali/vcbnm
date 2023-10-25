@@ -1,9 +1,8 @@
 import asyncio
 import random
-from AnonX import app
+from AnonXMusic import app
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
-from strings.filters import command
 from pyrogram import filters, Client
 
 txt = [
@@ -3675,7 +3674,7 @@ txt = [
         
 
 
-@app.on_message(command(["كت","تويت"]))
+@app.on_message(filters.command(["كت","تويت"],""))
 
 
 async def cutt(client: Client, message: Message):
