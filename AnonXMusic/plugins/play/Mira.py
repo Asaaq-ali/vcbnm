@@ -20,7 +20,7 @@ from config import BANNED_USERS
 @AdminRightsCheck
 async def khalid(client: Client, message: Message):
     user = message.from_user.mention
-    await message.reply_text(f"""✧ <b> اهلين </b> {user} !\n✧ <b> اضغط الزر عشان تشوف اوامر دينا</b>**""",
+    await message.reply_text(f"""✧ <b> اهلين </b> {user} !\n✧ <b> اضغط الزر عشان تشوف اوامر دينا</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -124,7 +124,7 @@ REPLY_MESSAGE_BUTTONS = [
 
           ],
           [
-             ("افلام")
+             ("المسلسلات")
           ], 
           [
 
