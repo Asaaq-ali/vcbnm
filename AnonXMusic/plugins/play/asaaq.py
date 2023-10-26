@@ -5,6 +5,7 @@ import random
 from config import BANNED_USERS
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
+iddof=[] 
 
 @app.on_message(
     filters.command(["صورتي"],"")
