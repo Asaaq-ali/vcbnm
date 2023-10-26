@@ -27,8 +27,8 @@ async def aflamAR(client: Client, message: Message):
     reply_markup=InlineKeyboardMarkup(
           [
 
-        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
-        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
+        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
+        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
