@@ -15,9 +15,8 @@ from config import BANNED_USERS
     & filters.group & ~BANNED_USERS
 )
 async def aflamAR(c: Client, m: Message):
-    await message.reply_text(f""" اهلا فيك  """, 
-    reply_markup = InlineKeyboardMarkup(
-                              [
+    global mid
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
