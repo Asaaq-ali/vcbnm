@@ -3,6 +3,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
 from AnonXMusic import app
+from config import BANNED_USERS
 
 #########################################################################################
 ###############msrahia##########################################################################
@@ -11,7 +12,7 @@ from AnonXMusic import app
 #########################################################################################
 @app.on_message(
     filters.command(["افلام"],"")
-    & ~filters.edited
+    & filters.group & ~BANNED_USERS
 )
 async def aflamAR(c: Client, m: Message):
     global mid
