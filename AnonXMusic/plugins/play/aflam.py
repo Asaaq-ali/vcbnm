@@ -178,7 +178,7 @@ async def XXco3(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/afalm1/6", reply_to_message_id=mid)
+    await m.message.reply_audio("https://t.me/afalm1/6")
 
 
 @app.on_callback_query(filters.regex("^XXco5 (\\d+)$"))
@@ -188,7 +188,7 @@ async def XXco5(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/afalm1/7", reply_to_message_id=mid)
+    await m.message.reply_audio("https://t.me/afalm1/7")
 
 #####
 @app.on_callback_query(filters.regex("^action (\\d+)$"))
@@ -254,7 +254,7 @@ async def XXact1(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/afalm1/4", reply_to_message_id=mid)
+    await m.message.reply_audio("https://t.me/afalm1/4")
 
 @app.on_callback_query(filters.regex("^XXact3 (\\d+)$"))
 async def XXact3(c: Client, m: CallbackQuery):
@@ -263,7 +263,7 @@ async def XXact3(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/afalm1/9", reply_to_message_id=mid)
+    await m.message.reply_audio("https://t.me/afalm1/9")
 
 ##########################################قف هنا#####
 
