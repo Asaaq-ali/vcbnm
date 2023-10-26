@@ -1,7 +1,9 @@
 import asyncio
 
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
+from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
+                            InlineKeyboardMarkup, Message)
+
 from AnonXMusic import app
 from config import BANNED_USERS
 
@@ -10,7 +12,16 @@ from config import BANNED_USERS
 #################drama########         # Aflam Arabic #             ##########################
 #########################################################################################
 #########################################################################################
-@app.on_message(filters.command(["افلام", "مسلسلات"],"") & filters.group ~BANNED_USERS)
+@app.on_message(
+  filters.command(
+      [
+         "افلام", 
+         "مسلسلات",    
+       ],""
+  )
+    & filters.group
+    & ~BANNED_USERS
+)
 async def aflamAR(client: Client, message: Message):
     await message.reply_text(f"""اهلين فيك في قسم المسلسلات """, 
     reply_markup=InlineKeyboardMarkup(
