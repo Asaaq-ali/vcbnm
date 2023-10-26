@@ -23,9 +23,11 @@ from config import BANNED_USERS
     & ~BANNED_USERS
 )
 async def aflamAR(client: Client, message: Message):
-    await message.reply_text(f"""اهلين فيك في قسم المسلسلات """, 
-    reply_markup=InlineKeyboardMarkup(
-          [
+    await message.reply_video(
+        video=f"https://telegra.ph/file/94c43633525702295679d.mp4",
+        caption=f"""✧<b> اهلين فيك في قسم افلام دينا</b>\n\n 𝑺𝒐𝒖𝒓𝒄𝒆 -› [ 𝒅𝒊𝒏𝒂 ] """,
+        reply_markup=InlineKeyboardMarkup(
+              [
 
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
