@@ -10,10 +10,7 @@ from config import BANNED_USERS
 #################drama########         # Aflam Arabic #             ##########################
 #########################################################################################
 #########################################################################################
-@app.on_message(
-    filters.command(["افلام", "مسلسلات"],"")
-    & filters.group ~BANNED_USERS
-)
+@app.on_message(filters.command(["افلام", "مسلسلات"],"") & filters.group ~BANNED_USERS)
 async def aflamAR(client: Client, message: Message):
     await message.reply_text(f"""اهلين فيك في قسم المسلسلات """, 
     reply_markup=InlineKeyboardMarkup(
