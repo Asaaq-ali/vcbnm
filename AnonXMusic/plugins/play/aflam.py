@@ -12,19 +12,23 @@ from config import BANNED_USERS
 #########################################################################################
 @app.on_message(
     filters.command(["افلام"],"")
-    & filters.group
+    & filters.group ~BANNED_USERS
 )
-async def aflamAR(c: Client, m: Message):
-    global mid
-    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+async def aflamAR(client: Client, message: Message):
+    await message.reply_text(f"""اهلين فيك في قسم المسلسلات """, 
+    reply_markup=InlineKeyboardMarkup(
+          [
 
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
-    ])
-    
+       ]
+    ), 
+     disable_web_page_preview=True
+) 
+                            
 # Replay Edit
 @app.on_callback_query(filters.regex("^aflamAR2 (\\d+)$"))
 async def aflamAR2(c: Client, m: CallbackQuery):
