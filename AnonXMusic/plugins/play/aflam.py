@@ -17,8 +17,8 @@ from config import BANNED_USERS
 @app.on_message(
   filters.command(
       [
-         "افلام", 
-         "مسلسلات",    
+         "الافلام", 
+         "المسلسلات",    
        ],""
   )
     & filters.group
@@ -167,7 +167,7 @@ async def Xasaaq2(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.edit_text(" الحلقه 1 من مسلسل حب حياتين ", m.message.reply_audio("https://t.me/serii_film/79"))
+    await m.message.reply_audio("https://t.me/serii_film/79")
 #الحلقة 3#
 @app.on_callback_query(filters.regex("^Xasaaq3 (\\d+)$"))
 async def Xasaaq3(c: Client, m: CallbackQuery):
