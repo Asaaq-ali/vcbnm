@@ -13,7 +13,7 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 @app.on_message(
   filters.command(
       [
-         "دينا", 
+         "ميووزك", 
          "ميوزك",    
        ],""
   )
