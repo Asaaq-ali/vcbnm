@@ -1,16 +1,33 @@
+import asyncio
+
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
-from config import get_bot_information
-
+from AnonXMusic import app
 
 #########################################################################################
 ###############msrahia##########################################################################
 #################drama########         # Aflam Arabic #             ##########################
 #########################################################################################
 #########################################################################################
+@app.on_message(
+    filters.command(["افلام"],"")
+    & ~filters.edited
+)
+async def aflamAR(c: Client, m: Message):
+    global mid
+    mid = m.message_id
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("افلام 🎬", callback_data="film " + str(m.from_user.id))],
+        [InlineKeyboardButton("مسلسلات 📼", callback_data="film " + str(m.from_user.id))],
+        
+        [InlineKeyboardButton("⌞ السورس", url=f"https://t.me/Mlze1bot")],
+
+    ])
+    await m.reply_text("◍ اهلا بيك في قائمة الافلام  \n√", reply_markup=keyboard)
 
 # Replay Text
-@Client.on_callback_query(filters.regex("^aflamAR (\\d+)$"))
+@app.on_callback_query(filters.regex("^aflamAR (\\d+)$"))
 async def aflamAR(c: Client, m: Message):
     global mid
     mid = m.message_id
@@ -19,14 +36,14 @@ async def aflamAR(c: Client, m: Message):
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
   
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
-    await m.reply_text("◍ اهلا بيك في قائمة الافلام والمسلسلات العربيه\n√", reply_markup=keyboard)
+    await m.reply_text("◍ اهلا بيك في قائمة الافلام  \n√", reply_markup=keyboard)
 
 
 # Replay Edit
-@Client.on_callback_query(filters.regex("^aflamAR2 (\\d+)$"))
+@app.on_callback_query(filters.regex("^aflamAR2 (\\d+)$"))
 async def aflamAR2(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -37,13 +54,13 @@ async def aflamAR2(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
   
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
     await m.message.edit_text("◍ اهلا بيك في قائمة الافلام والمسلسلات \n√", reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^film (\\d+)$"))
+@app.on_callback_query(filters.regex("^film (\\d+)$"))
 async def film(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -55,8 +72,8 @@ async def film(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("صيني 🇨🇳", callback_data="action " + str(m.from_user.id))],
    
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR2 " + str(m.from_user.id))],
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
-
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
+        
     ])
     await m.message.edit_text("◍ اهلا بيك في قائمة الافلام \n√", reply_markup=keyboard)
 
@@ -67,7 +84,7 @@ async def film(c: Client, m: CallbackQuery):
 #########################################################################################
 #########################################################################################
 
-@Client.on_callback_query(filters.regex("^comedy (\\d+)$"))
+@app.on_callback_query(filters.regex("^comedy (\\d+)$"))
 async def comedy(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -80,13 +97,13 @@ async def comedy(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("⌯ المحتالون ", callback_data="Xco3 " + str(m.from_user.id))] +
      
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="film " + str(m.from_user.id))],
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
     await m.message.edit_text("◍ اهلا بك في قائمة الافلام الكوريه \n√", reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^Xco1 (\\d+)$"))
+@app.on_callback_query(filters.regex("^Xco1 (\\d+)$"))
 async def Xco1(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -106,7 +123,7 @@ async def Xco1(c: Client, m: CallbackQuery):
     """, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^Xco2 (\\d+)$"))
+@app.on_callback_query(filters.regex("^Xco2 (\\d+)$"))
 async def Xco2(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -126,7 +143,7 @@ async def Xco2(c: Client, m: CallbackQuery):
         """, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^Xco3 (\\d+)$"))
+@app.on_callback_query(filters.regex("^Xco3 (\\d+)$"))
 async def Xco3(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -149,7 +166,7 @@ async def Xco3(c: Client, m: CallbackQuery):
 #########################################################################################
 #########################################################################################
 
-@Client.on_callback_query(filters.regex("^XXco1 (\\d+)$"))
+@app.on_callback_query(filters.regex("^XXco1 (\\d+)$"))
 async def XXco1(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -159,7 +176,7 @@ async def XXco1(c: Client, m: CallbackQuery):
     await m.message.reply_audio("https://t.me/afalm1/2", reply_to_message_id=mid)
 
 
-@Client.on_callback_query(filters.regex("^XXco3 (\\d+)$"))
+@app.on_callback_query(filters.regex("^XXco3 (\\d+)$"))
 async def XXco3(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -169,7 +186,7 @@ async def XXco3(c: Client, m: CallbackQuery):
     await m.message.reply_audio("https://t.me/afalm1/6", reply_to_message_id=mid)
 
 
-@Client.on_callback_query(filters.regex("^XXco5 (\\d+)$"))
+@app.on_callback_query(filters.regex("^XXco5 (\\d+)$"))
 async def XXco5(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -179,7 +196,7 @@ async def XXco5(c: Client, m: CallbackQuery):
     await m.message.reply_audio("https://t.me/afalm1/7", reply_to_message_id=mid)
 
 #####
-@Client.on_callback_query(filters.regex("^action (\\d+)$"))
+@app.on_callback_query(filters.regex("^action (\\d+)$"))
 async def action(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -191,13 +208,13 @@ async def action(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("مصاصي الدماء ", callback_data="Xact2 " + str(m.from_user.id))],
    
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR2 " + str(m.from_user.id))],
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
     await m.message.edit_text("اهلا بك في قائمة الافلام الاكشن الصينيه", reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^Xact1 (\\d+)$"))
+@app.on_callback_query(filters.regex("^Xact1 (\\d+)$"))
 async def Xact1(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -216,7 +233,7 @@ async def Xact1(c: Client, m: CallbackQuery):
         """, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^Xact2 (\\d+)$"))
+@app.on_callback_query(filters.regex("^Xact2 (\\d+)$"))
 async def Xact2(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -235,7 +252,7 @@ async def Xact2(c: Client, m: CallbackQuery):
         """, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^XXact1 (\\d+)$"))
+@app.on_callback_query(filters.regex("^XXact1 (\\d+)$"))
 async def XXact1(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -244,7 +261,7 @@ async def XXact1(c: Client, m: CallbackQuery):
     await m.message.delete()
     await m.message.reply_audio("https://t.me/afalm1/4", reply_to_message_id=mid)
 
-@Client.on_callback_query(filters.regex("^XXact3 (\\d+)$"))
+@app.on_callback_query(filters.regex("^XXact3 (\\d+)$"))
 async def XXact3(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
