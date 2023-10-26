@@ -80,7 +80,7 @@ async def lllock(client, message):
       return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
 
 @app.on_message(
-    ufilters.command(["فتح صورتي","تفعيل صورتي"],"")
+    filters.command(["فتح صورتي","تفعيل صورتي"],"")
     & filters.group
     & ~BANNED_USERS
 )
