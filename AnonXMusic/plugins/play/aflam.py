@@ -1,3 +1,17 @@
+""" 
+async def addbot(client: Client, message: Message):
+    await message.reply_text(f"""✧ <b> اهلين فيك بسورس دينا ياحلو
+• لو تبي تنصب مثل هالبوت تواصل مع مطور السورس
+• عندك استفسار او اقتراح بخصوص البوت تواصل مع مطور البوت</b>
+مطور السورس -› [𝗔𝗦𝗔𝗔𝗤](t.me/A_S_A_S_K)
+قناة السورس -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂](t.me/Mlze1bot)
+""",
+        reply_markup=InlineKeyboardMarkup(
+
+
+
+""" 
+
 import asyncio
 
 from pyrogram import Client, filters
@@ -14,20 +28,7 @@ from config import BANNED_USERS
     filters.command(["افلام"],"")
     & filters.group & ~BANNED_USERS
 )
-async def aflamAR(c: Client, m: Message):
-    global mid
-    mid = m.message_id
-    keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("افلام 🎬", callback_data="film " + str(m.from_user.id))],
-        [InlineKeyboardButton("مسلسلات 📼", callback_data="film " + str(m.from_user.id))],
-        
-        [InlineKeyboardButton("⌞ السورس", url=f"https://t.me/Mlze1bot")],
-
-    ])
-    await m.reply_text("◍ اهلا بيك في قائمة الافلام  \n√", reply_markup=keyboard)
-
-# Replay Text
 @app.on_callback_query(filters.regex("^aflamAR (\\d+)$"))
 async def aflamAR(c: Client, m: Message):
     global mid
