@@ -11,7 +11,7 @@ from config import BANNED_USERS
 #########################################################################################
 #########################################################################################
 @app.on_message(
-    filters.command(["افلام"],"")
+    filters.command(["افلام", "مسلسلات"],"")
     & filters.group ~BANNED_USERS
 )
 async def aflamAR(client: Client, message: Message):
