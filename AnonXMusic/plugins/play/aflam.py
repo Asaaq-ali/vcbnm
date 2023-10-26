@@ -168,7 +168,7 @@ async def XXco1(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/afalm1/2", reply_to_message_id)
+    await m.message.reply_audio("https://t.me/afalm1/2")
 
 
 @app.on_callback_query(filters.regex("^XXco3 (\\d+)$"))
