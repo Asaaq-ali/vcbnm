@@ -1,3 +1,5 @@
+###  zx حقوق سورس سهى تخمط اخمط عينك واطلعك من التلي مثل الجرذ
+
 import asyncio
 
 from pyrogram import Client, filters
@@ -8,9 +10,9 @@ from AnonXMusic import app
 from config import BANNED_USERS
 
 #########################################################################################
-###############msrahia##########################################################################
-#################drama########         # Aflam Arabic #             ##########################
 #########################################################################################
+#########################         #  𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂  𖥀 #             ##########################
+################################### https://t.me/Mlze1bot ######################################################
 #########################################################################################
 @app.on_message(
   filters.command(
@@ -28,7 +30,7 @@ async def aflamAR(client: Client, message: Message):
               [
 
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
-        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(message.from_user.id))],
+        [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(message.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
@@ -47,14 +49,14 @@ async def aflamAR2(c: Client, m: CallbackQuery):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
         [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
-        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
+        [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(m.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
     await m.message.edit_text("◍ اهلا بيك في قائمة الافلام والمسلسلات \n√", reply_markup=keyboard)
 
-
+######رد الافلام#######
 @app.on_callback_query(filters.regex("^film (\\d+)$"))
 async def film(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
@@ -63,7 +65,7 @@ async def film(c: Client, m: CallbackQuery):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("كوري 🇰🇷", callback_data="comedy " + str(m.from_user.id))],
+        [InlineKeyboardButton("كوري 🇰🇷", callback_data="zasaq9 " + str(m.from_user.id))],
         [InlineKeyboardButton("صيني 🇨🇳", callback_data="action " + str(m.from_user.id))],
    
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR2 " + str(m.from_user.id))],
@@ -71,16 +73,166 @@ async def film(c: Client, m: CallbackQuery):
         
     ])
     await m.message.edit_text("◍ اهلا بيك في قائمة الافلام \n√", reply_markup=keyboard)
+######رد المسلسلات #####
+@app.on_callback_query(filters.regex("^asaaq1 (\\d+)$"))
+async def asaaq1(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("كوري 🇰🇷", callback_data="xasaaq " + str(m.from_user.id))],
+        [InlineKeyboardButton("صيني 🇨🇳", callback_data="xasaaq " + str(m.from_user.id))],
+   
+        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR " + str(m.from_user.id))],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
+        
+    ])
+    await m.message.edit_text("◍ اهلا بيك في قائمة المسلسلات \n√", reply_markup=keyboard)
+
+#############################################################################قائمة المسلسلات#######الكوريه#####
+@app.on_callback_query(filters.regex("^xasaaq (\\d+)$"))
+async def xasaaq(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("⌯ حب عبر حياتين", callback_data="Xasa1 " + str(m.from_user.id))] +
+    
+        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="asaaq1 " + str(m.from_user.id))],
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
+
+    ])
+    await m.message.edit_text("◍ اهلا بك في قائمة المسلسلات الكوريه \n√", reply_markup=keyboard)
+
+#########مسلسل الاول #####
+@app.on_callback_query(filters.regex("^Xasa1 (\\d+)$"))
+async def Xasa1(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton("⌯  الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton("رجوع ⬅️", callback_data="xasaaq " + str(m.from_user.id))],
+    ])
+    await m.message.edit_text("""🎥 اسم المسلسل  :  النبيل
+    🌎 الدولة : كوريا
+    🗄 تصنيف : اكشن, رومنسي
+    📜 قصة المسلسل :
+بعد أن أصبحت ياو ليانغ ليانغ ‘شابين ضائعين’ فقدت حبها وفقدت وظيفتها فتحت بطريق الخطأ فجوة زمنية وفتحت الباب الغامض لكون موازٍ.
+    """, reply_markup=keyboard)
+
+######الحلقات المسلسل الاول ######
+@app.on_callback_query(filters.regex("^XXco1 (\\d+)$"))
+async def XXco1(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🐉", show_alert=True)
+        return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("الحلقة 1", callback_data="Xasaq1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton("الحلقة 2 ", callback_data="Xasaaq2 " + str(m.from_user.id))],
+        [InlineKeyboardButton("الحلقة 3", callback_data="Xasaaq3 " + str(m.from_user.id))] +
+        [InlineKeyboardButton("الحلقة 4", callback_data="Xasaaq4 " + str(m.from_user.id))],
+        [InlineKeyboardButton("الحلقة 5 ", callback_data="Xasaaq5 " + str(m.from_user.id))] +
+        [InlineKeyboardButton("الحلقة 6 ", callback_data="Xasaaq6 " + str(m.from_user.id))],
+        [InlineKeyboardButton("الحلقة 7 ", callback_data="Xasaaq7 " + str(m.from_user.id))] +
+        [InlineKeyboardButton("الحلقة 8 ", callback_data="Xasaaq8 " + str(m.from_user.id))],
+
+        [InlineKeyboardButton("الرئيسية ", callback_data="xasaaq " + str(m.from_user.id))] +
+        [InlineKeyboardButton(" ⌞ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 ⌝ ", url=f"https://t.me/Mlze1bot")],
+
+    ])
+    await m.message.edit_text("اهلا بك في قائمة مسلسل  حب عبر حياتيين ", reply_markup=keyboard)
+#####حلقات المسلسل حب عبر حياتين #######
+#الحلقة ١#
+@app.on_callback_query(filters.regex("^Xasaq1 (\\d+)$"))
+async def Xasaq1(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/78")
+#الحلقة 2#
+@app.on_callback_query(filters.regex("^Xasaaq2 (\\d+)$"))
+async def Xasaaq2(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/79")
+#الحلقة 3#
+@app.on_callback_query(filters.regex("^Xasaaq3 (\\d+)$"))
+async def Xasaaq3(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/80")
+##الحلقه 4###
+@app.on_callback_query(filters.regex("^Xasaaq4 (\\d+)$"))
+async def Xasaaq4(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/81")
+##الحلقه 5###
+@app.on_callback_query(filters.regex("^Xasaaq5 (\\d+)$"))
+async def Xasaaq5(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/82")
+##الحلقه 6##
+@app.on_callback_query(filters.regex("^Xasaaq6 (\\d+)$"))
+async def Xasaaq6(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/83")
+###الحلقه 7###
+@app.on_callback_query(filters.regex("^Xasaaq7 (\\d+)$"))
+async def Xasaaq7(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/84")
+##الحلثة 8##
+@app.on_callback_query(filters.regex("^Xasaaq8 (\\d+)$"))
+async def Xasaaq8(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    await m.message.delete()
+    await m.message.reply_audio("https://t.me/serii_film/85")
+##النهايه####
 
 
-#########################################################################################
+
 #########################################################################################
 #########################         # Aflam Comedy #             ##########################
 #########################################################################################
 #########################################################################################
 
-@app.on_callback_query(filters.regex("^comedy (\\d+)$"))
-async def comedy(c: Client, m: CallbackQuery):
+@app.on_callback_query(filters.regex("^zasaq9 (\\d+)$"))
+async def zasaq9(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
@@ -266,8 +418,3 @@ async def XXact3(c: Client, m: CallbackQuery):
     await m.message.reply_audio("https://t.me/afalm1/9")
 
 ##########################################قف هنا#####
-
-
-
-
-
