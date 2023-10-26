@@ -12,7 +12,7 @@ from config import BANNED_USERS
 #########################################################################################
 @app.on_message(
     filters.command(["افلام"],"")
-    & filters.group & ~BANNED_USERS
+    & filters.group
 )
 async def aflamAR(c: Client, m: Message):
     global mid
