@@ -158,7 +158,14 @@ async def Xasaq1(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/serii_film/78")
+    await m.message.delete()
+    await message.reply_video(
+        video=f"https://t.me/serii_film/78",
+        caption=f"""الحلقة 1 من مسلسل حب حياتين""",
+        reply_markup=InlineKeyboardMarkup(
+                    [InlineKeyboardButton("الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] 
+                              ),
+                      ) 
 #الحلقة 2#
 @app.on_callback_query(filters.regex("^Xasaaq2 (\\d+)$"))
 async def Xasaaq2(c: Client, m: CallbackQuery):
