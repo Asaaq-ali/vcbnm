@@ -8,6 +8,7 @@ import requests
 import aiohttp
 import aiofiles
 
+import config
 import yt_dlp
 from yt_dlp import YoutubeDL
 from pyrogram import Client, filters
@@ -54,7 +55,7 @@ async def song_downloader(client, message: Message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"✧ <a href={0}>[𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂]</a>  @{app.username} "
+        rep = f"✧ <a href={0}> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a> : @{app.username} "
         host = str(info_dict["uploader"])
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
