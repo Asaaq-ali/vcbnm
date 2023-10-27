@@ -97,3 +97,19 @@ async def acbadmin(_, query: CallbackQuery):
             [[InlineKeyboardButton("العودة", callback_data="bcmds")]]
         ),
     )
+@Client.on_callback_query(filters.regex("bhowtouse"))
+async def acbguides(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""<b> طريقة تفعيل البوت في مجموعتك :</b>
+ٴ⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆
+<b>1- اضف البوت الى مجموعتك</b>
+<b>2- ترقية البوت مشرف كامل الصلاحيه</b>
+3- لـ تحديث قائمة الادمن ارسل `ريلود`
+<b>- اضف الحساب المساعد الى مجموعتك (يوزر المساعد ع نبذة البوت)</b>
+<b>4- تأكد من تشغيل المحادثة الصوتية<b>
+<b>5- اذا واجهت خطأ قم بكتابة الام* `ريلود`</b>
+™""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("العودة", callback_data="arbic")]]
+        ),
+    )
