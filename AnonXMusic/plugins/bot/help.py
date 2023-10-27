@@ -59,7 +59,7 @@ async def helper_private(
                 _["help_1"], reply_markup=keyboard
             )
         else:
-            try:
+         try:
                 await update.delete()
             except:
                 pass
