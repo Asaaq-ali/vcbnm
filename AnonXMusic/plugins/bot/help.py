@@ -18,7 +18,8 @@ from strings import get_string, helpers
 from AnonXMusic import app
 from AnonXMusic.misc import SUDOERS
 from AnonXMusic.utils import help_pannel
-from AnonXMusic.utils.database import get_lang, is_commanddelete_on
+from AnonXMusic.utils.database import get_lang
+from AnonXMusic.utils.databasea import is_commanddelete_on
 from AnonXMusic.utils.decorators.language import (LanguageStart,
                                                   languageCB)
 from AnonXMusic.utils.inline.help import (help_back_markup,
