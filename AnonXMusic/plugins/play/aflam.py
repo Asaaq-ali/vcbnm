@@ -158,8 +158,7 @@ async def Xasaq1(c: Client, m: CallbackQuery):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     await m.message.delete()
-    await m.message.delete()
-    await message.reply_video(
+    await m.message.reply_video(
         video=f"https://t.me/serii_film/78",
         caption=f"""الحلقة 1 من مسلسل حب حياتين""",
         reply_markup=InlineKeyboardMarkup(
