@@ -14,7 +14,7 @@ command = []
 
 
 
-Delete command mode
+
 async def is_commanddelete_on(chat_id: int) -> bool:
     if chat_id not in command:
         return True
