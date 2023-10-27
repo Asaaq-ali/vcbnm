@@ -19,7 +19,7 @@ from AnonXMusic import app
 from AnonXMusic.misc import SUDOERS
 from AnonXMusic.utils import help_pannel
 from AnonXMusic.utils.database import get_lang
-from AnonXMusic.utils.databasea import is_commanddelete_on
+
 from AnonXMusic.utils.decorators.language import (LanguageStart,
                                                   languageCB)
 from AnonXMusic.utils.inline.help import (help_back_markup,
@@ -59,8 +59,6 @@ async def helper_private(
                 _["help_1"], reply_markup=keyboard
             )
     else:
-        chat_id = update.chat.id
-        if await is_commanddelete_on(update.chat.id):
             try:
                 await update.delete()
             except:
