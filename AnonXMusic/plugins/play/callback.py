@@ -8,7 +8,7 @@ from AnonXMusic import app
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""<b>- مرحبا عـزيـزي  </b> [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) ! \n
+        f"""<b>- مرحبا عـزيـزي  </b>  \n
 <b>- في قسم تشغيل الأغاني والفيديو في المكالمات</b>\n
 <b>- استخدم الازرار لـ تصفـح اوامـر الميـوزك</b> """,
         reply_markup=InlineKeyboardMarkup(
@@ -30,7 +30,7 @@ async def arbic(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("bcmds"))
 async def acbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>- عـزيـزي  [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !</b>
+        f"""<b>- عـزيـزي   !</b>
 <b>- استخـدم الازرار بالاسفل لمعرفة طريقة التشغيل</b>
 \n™""",
         reply_markup=InlineKeyboardMarkup(
