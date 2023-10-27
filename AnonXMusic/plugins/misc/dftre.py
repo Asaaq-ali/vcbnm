@@ -3,13 +3,13 @@ from AnonXMusic import app
 import asyncio
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from AnonXMusic.core.call import Anon
+from AnonXMusic.core.call import Anonx
 from AnonXMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 
 @app.on_message(filters.regex("^مين في الكول$"))
 async def strcall(client, message):
-    assistant = await group_assistant(Anon,message.chat.id)
+    assistant = await group_assistant(Anonx,message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("./assets/vega.mp3"), stream_type=StreamType().pulse_stream)
         text="- المستخدميـن المتواجديـن في المكالمـة 🛗 :\n\n"
@@ -52,7 +52,7 @@ async def strcall(client, message):
 
 @app.on_message(filters.regex("^المتصلين$"))
 async def strcall(client, message):
-    assistant = await group_assistant(Anon,message.chat.id)
+    assistant = await group_assistant(Anonx,message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("./assets/vega.mp3"), stream_type=StreamType().pulse_stream)
         text="- المستخدميـن المتواجديـن في المكالمـة 🛗 :\n\n"
