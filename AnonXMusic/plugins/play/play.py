@@ -28,7 +28,7 @@ from config import BANNED_USERS, lyrical
 @app.on_message(
     filters.command(
         [
-            "سهى شغلي",
+            "دينا شغلي",
             "شغل",
             "تشغيل",
             "vplay",
