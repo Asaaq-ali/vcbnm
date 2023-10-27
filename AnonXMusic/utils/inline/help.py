@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
 
 
-def private_help_panel(_, START: Union[bool, int] = None):
+def help_pannel(_, START: Union[bool, int] = None):
     first = [
         InlineKeyboardButton(
             text=_["CLOSEMENU_BUTTON"], callback_data=f"close"
@@ -80,7 +80,7 @@ def help_back_markup(_):
     return upl
 
 
-def help_pannel(_):
+def private_help_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
