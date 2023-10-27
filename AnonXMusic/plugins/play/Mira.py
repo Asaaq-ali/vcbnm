@@ -16,7 +16,7 @@ from pyrogram.types import (
 from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from config import BANNED_USERS
 
-@app.on_message(filters.regex("^$") & filters.group & ~BANNED_USERS) 
+@app.on_message(filters.regex("^ميوزك$") & filters.group & ~BANNED_USERS) 
 @AdminRightsCheck
 async def khalid(client: Client, message: Message):
     user = message.from_user.mention
