@@ -59,10 +59,10 @@ async def helper_private(
                 _["help_1"], reply_markup=keyboard
             )
         else:
-            try:
-               await update.delete()
-            except:
-                pass
+        try:
+            await update.delete()
+        except:
+            pass
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = help_pannel(_)
