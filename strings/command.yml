@@ -5,4 +5,4 @@
 
 # Bot Commands
 PING_COMMAND : ["ping", ""]
-START_COMMAND : ["star"]
+START_COMMAND : ["start"]
