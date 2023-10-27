@@ -68,7 +68,6 @@ async def film(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("كوري 🇰🇷", callback_data="zasaq9 " + str(m.from_user.id))],
         [InlineKeyboardButton("صيني 🇨🇳", callback_data="action " + str(m.from_user.id))],
    
-        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR2 " + str(m.from_user.id))],
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
         
     ])
@@ -85,7 +84,6 @@ async def asaaq1(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("كوري 🇰🇷", callback_data="xasaaq " + str(m.from_user.id))],
         [InlineKeyboardButton("صيني 🇨🇳", callback_data="xasaaq " + str(m.from_user.id))],
    
-        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="aflamAR " + str(m.from_user.id))],
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
         
     ])
@@ -102,7 +100,7 @@ async def xasaaq(c: Client, m: CallbackQuery):
 
         [InlineKeyboardButton("⌯ حب عبر حياتين", callback_data="Xasa1 " + str(m.from_user.id))] +
     
-        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="asaaq1 " + str(m.from_user.id))],
+        [InlineKeyboardButton("عوده للمسلسلات ⏺", callback_data="asaaq1 " + str(m.from_user.id))],
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
@@ -119,7 +117,7 @@ async def Xasa1(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("⌯  الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
         [InlineKeyboardButton("رجوع ⬅️", callback_data="xasaaq " + str(m.from_user.id))],
     ])
-    await m.message.edit_text("""🎥 اسم المسلسل  :  النبيل
+    await m.message.edit_text("""🎥 اسم المسلسل  :حب عبر حياتين
     🌎 الدولة : كوريا
     🗄 تصنيف : اكشن, رومنسي
     📜 قصة المسلسل :
@@ -176,8 +174,18 @@ async def Xasaaq2(c: Client, m: CallbackQuery):
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
+        [InlineKeyboardButton("الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton(" ⌞ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 ⌝ ", url=f"https://t.me/Mlze1bot")],
+
+    ])
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/serii_film/79")
+    await m.message.reply_video(
+        video=f"https://t.me/serii_film/79",
+        caption=f"""الحلقة 2 من مسلسل حب حياتين""", reply_markup=keyboard)
+
+
+
 #الحلقة 3#
 @app.on_callback_query(filters.regex("^Xasaaq3 (\\d+)$"))
 async def Xasaaq3(c: Client, m: CallbackQuery):
@@ -185,8 +193,17 @@ async def Xasaaq3(c: Client, m: CallbackQuery):
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
+        [InlineKeyboardButton("الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton(" ⌞ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 ⌝ ", url=f"https://t.me/Mlze1bot")],
+
+    ])
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/serii_film/80")
+    await m.message.reply_video(
+        video=f"https://t.me/serii_film/80",
+        caption=f"""الحلقة 3 من مسلسل حب حياتين""", reply_markup=keyboard)
+
+
 ##الحلقه 4###
 @app.on_callback_query(filters.regex("^Xasaaq4 (\\d+)$"))
 async def Xasaaq4(c: Client, m: CallbackQuery):
@@ -194,8 +211,17 @@ async def Xasaaq4(c: Client, m: CallbackQuery):
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
+        [InlineKeyboardButton("الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton(" ⌞ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 ⌝ ", url=f"https://t.me/Mlze1bot")],
+
+    ])
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/serii_film/81")
+    await m.message.reply_video(
+        video=f"https://t.me/serii_film/81",
+        caption=f"""الحلقة 4 من مسلسل حب حياتين""", reply_markup=keyboard)
+
+
 ##الحلقه 5###
 @app.on_callback_query(filters.regex("^Xasaaq5 (\\d+)$"))
 async def Xasaaq5(c: Client, m: CallbackQuery):
@@ -203,8 +229,18 @@ async def Xasaaq5(c: Client, m: CallbackQuery):
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
+        [InlineKeyboardButton("الحلقات ", callback_data="XXco1 " + str(m.from_user.id))] +
+        [InlineKeyboardButton(" ⌞ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 ⌝ ", url=f"https://t.me/Mlze1bot")],
+
+    ])
     await m.message.delete()
-    await m.message.reply_audio("https://t.me/serii_film/82")
+    await m.message.reply_video(
+        video=f"https://t.me/serii_film/82",
+        caption=f"""الحلقة 5 من مسلسل حب حياتين""", reply_markup=keyboard)
+
+
+
 ##الحلقه 6##
 @app.on_callback_query(filters.regex("^Xasaaq6 (\\d+)$"))
 async def Xasaaq6(c: Client, m: CallbackQuery):
