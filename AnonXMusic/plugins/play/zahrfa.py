@@ -1,11 +1,10 @@
 
 import random
 import re
-from config import MUSIC_BOT_NAME 
 from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message
-from AnonX import app
+from AnonXMusic import app
 
 @app.on_message(filters.command(["زخرفه"],""))
 async def zahrafa(c: Client, m: Message):
