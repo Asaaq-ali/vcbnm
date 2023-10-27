@@ -22,7 +22,7 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 )
 async def khalid(client: Client, message: Message):
     await message.reply_video(
-        photo=f"https://telegra.ph/file/d723f4c80da157fca1678.jpg",
+        video=f"https://telegra.ph/file/d723f4c80da157fca1678.jpg",
         caption=f"""✧<b> اهلين فيك في قسم أفلام دينا</b> \n\n <b>  لمشاهدة الأفلام أضغط على الزر تحت </b> \n\n•<b>  Developer -› [ASAAQ]\n• Channel -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂]</b> """,
         reply_markup=InlineKeyboardMarkup(
             [
