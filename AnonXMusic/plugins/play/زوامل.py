@@ -66,3 +66,17 @@ async def ihd(client: Client, message: Message):
     )
 
                         
+@app.on_message(filters.command([f"شيله", "بدر العزي", "شيلات", "{BOT_USERNAME} شيلات"],""))
+async def ihd(client: Client, message: Message):
+    rl = random.randint(8,20)
+    url = f"https://t.me/Alezzi1/{rl}"
+    await client.send_voice(message.chat.id,url,caption="<b>---------✧ [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂] </b>\n✧ ¦ تـم اختيـار الشيلة  لـك",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂", url=f"t.me/Mlze1bot")
+                ],
+            ]
+        )
+    )
