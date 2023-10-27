@@ -58,9 +58,9 @@ async def helper_private(
             await update.edit_message_text(
                 _["help_1"], reply_markup=keyboard
             )
-     else:
+    else:
         try:
-            await update.delete()
+           await update.delete()
         except:
             pass
         language = await get_lang(chat_id)
