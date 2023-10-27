@@ -26,3 +26,21 @@ async def arbic(_, query: CallbackQuery):
         ),
         disable_web_page_preview=True,
     )
+
+@Client.on_callback_query(filters.regex("bcmds"))
+async def acbcmds(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""<b>- عـزيـزي  [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !</b>
+<b>- استخـدم الازرار بالاسفل لمعرفة طريقة التشغيل</b>
+\n™""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("اوامر التشغيل", callback_data="bbasic"),
+                    InlineKeyboardButton("اوامر الادمن", callback_data="badmin"),
+                ],[
+                    InlineKeyboardButton("العودة", callback_data="arbic")
+                ],
+            ]
+        ),
+    )
