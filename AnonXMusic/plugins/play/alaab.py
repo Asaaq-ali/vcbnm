@@ -6,24 +6,33 @@ from AnonXMusic import app
 import re
 import sys
 
-GAME_MESSAGE = "──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب cr\n\n──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────"
+GAME_MESSAGE = "──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب cr\n\n──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────"
 GAME_BUTTONS = [
     [ 
-        InlineKeyboardButton ('★¦العاب 3D', callback_data= 'GAME1'),
+        InlineKeyboardButton ('العاب 3D ', callback_data= 'GAME1'),
         InlineKeyboardButton ('cr cr', callback_data= 'GAME2'),
         ],[
-        InlineKeyboardButton ('──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────', url =f"https://t.me/S0URCE_STAR")              
+        InlineKeyboardButton ('──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────', url =f"https://t.me/Mlze1bot")              
                  ],[
                 InlineKeyboardButton(
                         "◁", callback_data="close"),
                ],
           ]
-    
+@app.on_message(
+    filters.command(["الالعاب","العاب"],"")
+)
+async def zohary(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/86eb759b32ead328e198a.jpg",
+        caption= GAME_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(GAME_BUTTONS)
+    ) 
+
 @app.on_callback_query()
 async def callback_query(client, CallbackQuery):
           if CallbackQuery.data == "GAME1":
             
-             GAME1_MESSAGE = "──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────\n\nمرحبا بك في قسم العاب star 3D\n\n──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────"
+             GAME1_MESSAGE = "──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────\n\nمرحبا بك في قسم العاب star 3D\n\n──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────"
 
              GAME1_BUTTONS = [
                  [
@@ -67,14 +76,14 @@ async def callback_query(client, CallbackQuery):
               )
           elif CallbackQuery.data == "GAME":
                
-               RETURN_GAME = "──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────\n\n★¦مرحبا بك في قسم العاب cr\n★¦اختار ما تشاء من الالعاب مسليه وستمتع بها\n\n──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────" 
+               RETURN_GAME = "──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────\n\n★¦مرحبا بك في قسم العاب cr\n★¦اختار ما تشاء من الالعاب مسليه وستمتع بها\n\n──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────" 
 
                RETURN_BUTTON = [
                     [ 
                       InlineKeyboardButton ('★¦العاب 3D', callback_data= 'GAME1'),
                       InlineKeyboardButton ('★¦العاب cr', callback_data= 'GAME2')
                       ],[
-        InlineKeyboardButton ('「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」', url =f"https://t.me/S0URCE_STAR")              
+        InlineKeyboardButton ('「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」', url =f"https://t.me/Mlze1bot")              
                  ],[
                 InlineKeyboardButton(
                         "◁", callback_data="close"),
@@ -91,7 +100,7 @@ async def callback_query(client, CallbackQuery):
 
                SORGAM_BUTTON = [
                     [ 
-                      InlineKeyboardButton ('──── 「 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙏𝘼𝙍 」────', url =f"https://t.me/S0URCE_STAR")
+                      InlineKeyboardButton ('──── 「 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 」────', url =f"https://t.me/Mlze1bot")
                       ],[
                          InlineKeyboardButton ('◁', callback_data= 'GAME')
                     ]
