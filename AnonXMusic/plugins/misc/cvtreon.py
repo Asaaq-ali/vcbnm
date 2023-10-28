@@ -18,12 +18,12 @@ from config import BANNED_USERS
     & filters.group
     & ~BANNED_USERS
 )
-async def aflamAR(client: Client, message: Message):
+async def anmi(client: Client, message: Message):
     await message.reply_text(f"""✧<b> اهلين فيك في قسم أنـــمي دينا</b>\n\n 𝑺𝒐𝒖𝒓𝒄𝒆 -› [ 𝒅𝒊𝒏𝒂 ] """,
         reply_markup=InlineKeyboardMarkup(
               [
 
-        [InlineKeyboardButton("انمي 📼", callback_data="anmie2 " + str(message.from_user.id))],
+        [InlineKeyboardButton("انمي 📼", callback_data="anmie " + str(message.from_user.id))],
         [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(message.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
