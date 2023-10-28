@@ -23,7 +23,7 @@ async def anmi(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
               [
 
-        [InlineKeyboardButton("انمي 📼", callback_data="anmie " + str(message.from_user.id))],
+        [InlineKeyboardButton("انمي 📼", callback_data="anmie2 " + str(message.from_user.id))],
         [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(message.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
