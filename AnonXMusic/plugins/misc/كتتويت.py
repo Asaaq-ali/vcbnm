@@ -18,12 +18,12 @@ from config import BANNED_USERS
     & filters.group
     & ~BANNED_USERS
 )
-async def aflamAR(client: Client, message: Message):
+async def anmie(client: Client, message: Message):
     await message.reply_text(f"""✧<b> اهلين فيك في قسم أنـــمي  دينا</b>\n\n ✧ <a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a>   لتصفح الانميات اضغط على زر انميات  """,
         reply_markup=InlineKeyboardMarkup(
               [
 
-        [InlineKeyboardButton("أنـــميــات", callback_data="anmie2 " + str(message.from_user.id))],
+        [InlineKeyboardButton("أنـــميــات", callback_data="anmie " + str(message.from_user.id))],
         
         [InlineKeyboardButton("✧ [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂] ", url=f"https://t.me/Mlze1bot")],
 
@@ -34,7 +34,7 @@ async def aflamAR(client: Client, message: Message):
 ###############################################################################
 ##########################################################################انمي القناص###########################
 @Client.on_callback_query(filters.regex("^anmie (\\d+)$"))
-async def anmie(c: Client, m: Message):
+async def anmie(client: Client, message: Message):
     global mid
     mid = m.message_id
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
