@@ -33,7 +33,7 @@ async def anmi(client: Client, message: Message):
      disable_web_page_preview=True
 ) 
 @Client.on_callback_query(filters.regex("^anmie (\\d+)$"))
-async def anmie(client: Client, message: Message):
+async def anmie(c: Client, m: CallbackQuery):
     global mid
     mid = m.message_id
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
