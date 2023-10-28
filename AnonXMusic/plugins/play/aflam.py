@@ -18,7 +18,7 @@ from config import BANNED_USERS
   filters.command(
       [
          "الافلام", 
-         "المسلسلات",    
+         "مسلسلات",    
        ],""
   )
     & filters.group
@@ -48,7 +48,7 @@ async def aflamAR2(c: Client, m: CallbackQuery):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("افلام 📼", callback_data="film " + str(m.from_user.id))],
+        [InlineKeyboardButton("افلام 📼", callback_data="xfilum " + str(m.from_user.id))],
         [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(m.from_user.id))],
   
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
@@ -57,7 +57,7 @@ async def aflamAR2(c: Client, m: CallbackQuery):
     await m.message.edit_text("◍ اهلا بيك في قائمة الافلام والمسلسلات \n√", reply_markup=keyboard)
 
 ######رد الافلام#######
-@app.on_callback_query(filters.regex("^film (\\d+)$"))
+@app.on_callback_query(filters.regex("^xfilum (\\d+)$"))
 async def film(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -289,7 +289,7 @@ async def zasaq9(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("⌯ المرشحة الصادقة ", callback_data="Xco2 " + str(m.from_user.id))],
         [InlineKeyboardButton("⌯ المحتالون ", callback_data="Xco3 " + str(m.from_user.id))] +
      
-        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="film " + str(m.from_user.id))],
+        [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="asaaq1 " + str(m.from_user.id))],
         [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
     ])
@@ -304,7 +304,7 @@ async def Xco1(c: Client, m: CallbackQuery):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton("⌯ جوده متوسطه", callback_data="XXco1 " + str(m.from_user.id))] +
-        [InlineKeyboardButton("رجوع ⬅️", callback_data="comedy " + str(m.from_user.id))],
+        [InlineKeyboardButton("رجوع ⬅️", callback_data="zasaq9 " + str(m.from_user.id))],
     ])
     await m.message.edit_text("""🎥 اسم الفيلم  :  النبيل
     🌎 الدولة : كوريا
@@ -324,7 +324,7 @@ async def Xco2(c: Client, m: CallbackQuery):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton("⌯ جوده متوسطه", callback_data="XXco3 " + str(m.from_user.id))] +
-        [InlineKeyboardButton("رجوع ⬅️", callback_data="comedy " + str(m.from_user.id))],
+        [InlineKeyboardButton("رجوع ⬅️", callback_data="zasaq9 " + str(m.from_user.id))],
     ])
     await m.message.edit_text("""🎥 اسم الفيلم : المرشحة الصادقة 
         📖 انتاج سنة  : 2020
@@ -344,7 +344,7 @@ async def Xco3(c: Client, m: CallbackQuery):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton("⌯ جوده متوسطه", callback_data="XXco5 " + str(m.from_user.id))] +
-        [InlineKeyboardButton("رجوع ⬅️", callback_data="comedy " + str(m.from_user.id))],
+        [InlineKeyboardButton("رجوع ⬅️", callback_data="zasaq9 " + str(m.from_user.id))],
     ])
     await m.message.edit_text("""🎥 اسم الفيلم : المحتالون
          انتاج سنة : 2017
