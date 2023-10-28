@@ -12,7 +12,7 @@ from config import BANNED_USERS
   filters.command(
       [
          "انمي", 
-         "مسلسلات",    
+         "مسلسل",    
        ],""
   )
     & filters.group
