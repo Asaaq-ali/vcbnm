@@ -18,7 +18,7 @@ from config import BANNED_USERS
     & filters.group
     & ~BANNED_USERS
 )
-async def anmie2(client: Client, message: Message):
+async def asaaqali(client: Client, message: Message):
     await message.reply_text(f"""✧<b> اهلين فيك في قسم أنـــمي  دينا</b>\n\n ✧ <a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a>   لتصفح الانميات اضغط على زر انميات  """,
         reply_markup=InlineKeyboardMarkup(
               [
