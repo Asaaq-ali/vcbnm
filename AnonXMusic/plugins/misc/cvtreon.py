@@ -31,8 +31,6 @@ async def anmie2(client: Client, message: Message):
     ), 
      disable_web_page_preview=True
 ) 
-###############################################################################
-##########################################################################انمي القناص###########################
 @Client.on_callback_query(filters.regex("^anmie (\\d+)$"))
 async def anmie(client: Client, message: Message):
     global mid
