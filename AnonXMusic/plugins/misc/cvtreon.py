@@ -12,20 +12,21 @@ from config import BANNED_USERS
   filters.command(
       [
          "انمي", 
-         "انميات",    
+         "مسلسلات",    
        ],""
   )
     & filters.group
     & ~BANNED_USERS
 )
-async def asaaqali(client: Client, message: Message):
-    await message.reply_text(f"""✧<b> اهلين فيك في قسم أنـــمي  دينا</b>\n\n ✧ <a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a>   لتصفح الانميات اضغط على زر انميات  """,
+async def aflamAR(client: Client, message: Message):
+    await message.reply_text(f"""✧<b> اهلين فيك في قسم أنـــمي دينا</b>\n\n 𝑺𝒐𝒖𝒓𝒄𝒆 -› [ 𝒅𝒊𝒏𝒂 ] """,
         reply_markup=InlineKeyboardMarkup(
               [
 
-        [InlineKeyboardButton("أنـــميــات", callback_data="anmie2 " + str(message.from_user.id))],
-        
-        [InlineKeyboardButton("✧ [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂] ", url=f"https://t.me/Mlze1bot")],
+        [InlineKeyboardButton("انمي 📼", callback_data="anmie2 " + str(message.from_user.id))],
+        [InlineKeyboardButton("مسلسلات 📼", callback_data="asaaq1 " + str(message.from_user.id))],
+  
+        [InlineKeyboardButton("السورس ✅", url=f"https://t.me/Mlze1bot")],
 
        ]
     ), 
