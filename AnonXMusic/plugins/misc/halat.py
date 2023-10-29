@@ -27,3 +27,18 @@ async def ihd(client: Client, message: Message):
             ]
         )
                            )
+
+@app.on_message(filters.command(["اقتباسات", "اقتباس"],""))
+async def ihd(client: Client, message: Message):
+    rl = random.randint(2,90)
+    url = f"https://t.me/akttbas6/{rl}"
+    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار اقتباس لـك",parse_mode="html",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                ],
+            ]
+        )
+    )
