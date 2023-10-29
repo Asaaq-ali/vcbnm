@@ -1,44 +1,40 @@
 import asyncio
 
-import os
-import time
-import requests
-from config import START_IMG_URL
-from pyrogram import filters
 import random
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from AnonXMusic import app
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from AnonXMusic import app, Telegram
 from random import  choice, randint
 
 
 @app.on_message(filters.command(["استوري","حالات","فيديو"],""))
 async def ihd(client: Client, message: Message):
-    rl = random.randint(1,50)
+    rl = random.randint(3,100)
     url = f"https://t.me/halatwatsa7/{rl}"
-    await client.send_audio(message.chat.id,url,caption="🐉 ¦ تـم اختيـار فيلم لـك",parse_mode="html",
+    await client.send_audio(message.chat.id,url,caption="<b> تـم اختيـار الأستوري لـك ¦ 🌹</b>\n ✧ [<a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂</a>]",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/Mlze1bot")
-                ],
-            ]
-        )
-                           )
-
-@app.on_message(filters.command(["اقتباسات", "اقتباس"],""))
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,90)
-    url = f"https://t.me/akttbas6/{rl}"
-    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار اقتباس لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        "𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂", url=f"t.me/Mlze1bot")
                 ],
             ]
         )
     )
+
+@app.on_message(filters.command(["اقتباسات", "اقتباس"],""))
+async def ihd(client: Client, message: Message):
+    rl = random.randint(3,200)
+    url = f"https://t.me/akttbas6/{rl}"
+    await client.send_photo(message.chat.id,url,caption="<b> تـم اختيـار الأقتباس لـك ¦ 🌹</b>\n ✧ [<a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂</a>]",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂", url=f"t.me/Mlze1bot")
+                ],
+            ]
+        )
+     )
+
+
