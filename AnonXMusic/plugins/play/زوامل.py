@@ -39,7 +39,7 @@ async def huhh(client: Client, message: Message):
 async def ihd(client: Client, message: Message):
     rl = random.randint(8,20)
     url = f"https://t.me/zwamlallaith/{rl}"
-    await client.send_voice(message.chat.id,url,caption="عزيزي {message.from_user.mention} \n ✧ <a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a> ",
+    await client.send_voice(message.chat.id,url,caption="عزيزي message.from_user.first_name \n ✧ <a href=https://t.me/Mlze1bot> 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 </a> ",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
