@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
 from config import OWNER_ID
 
-@app.on_message(filters.command(["مهنتي","عملي"],""))
+@app.on_message(filters.command(["مهنتي","شخصيتي"],""))
 def get_user_info(_, message):
     url = f"https://t.me/{message.from_user.username}"
     age = random.randint(15, 25)
