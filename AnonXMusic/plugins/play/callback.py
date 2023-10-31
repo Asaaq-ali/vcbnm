@@ -4,7 +4,7 @@ from AnonXMusic import app as Client
 from AnonXMusic import app
 
 
-@Client.on_callback_query(filters.regex("arbic"))
+@app.on_callback_query(filters.regex("arbic"))
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
@@ -27,7 +27,7 @@ async def arbic(_, query: CallbackQuery):
         disable_web_page_preview=True,
     )
 
-@Client.on_callback_query(filters.regex("bcmds"))
+@app.on_callback_query(filters.regex("bcmds"))
 async def acbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>- عـزيـزي   !</b>
@@ -44,7 +44,7 @@ async def acbcmds(_, query: CallbackQuery):
             ]
         ),
     )
-@Client.on_callback_query(filters.regex("bbasic"))
+@app.on_callback_query(filters.regex("bbasic"))
 async def acbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b> اوامــر التشغيــل :</b>
@@ -78,7 +78,7 @@ async def acbbasic(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("badmin"))
+@app.on_callback_query(filters.regex("badmin"))
 async def acbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b> اوامـر التحكم الخاصـه بـ الادمنيـة :</b>
@@ -97,7 +97,7 @@ async def acbadmin(_, query: CallbackQuery):
             [[InlineKeyboardButton("العودة", callback_data="bcmds")]]
         ),
     )
-@Client.on_callback_query(filters.regex("bhowtouse"))
+@app.on_callback_query(filters.regex("bhowtouse"))
 async def acbguides(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b> طريقة تفعيل البوت في مجموعتك :</b>
