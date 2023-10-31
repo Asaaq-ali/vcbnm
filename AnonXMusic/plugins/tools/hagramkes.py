@@ -47,7 +47,7 @@ def start(client, message):
             f"{game_state[message.chat.id]['player1']['name']} بدأ لعبة حجرة ورقة مقص.\n\nانتظر اللاعب الثاني...",
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("اضغط للعب", callback_data="join")],
+                    [InlineKeyboardButton("اضغط للعب", callback_data="vtrds")],
                     [InlineKeyboardButton(" ✧  𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂  ", url="https://t.me/Mlze1bot")]
                 ]
             )
@@ -55,8 +55,8 @@ def start(client, message):
     else:
         message.reply("هناك لعبة جارية بالفعل في هذه الدردشة. انتظر حتى تنتهي.")
 
-@app.on_callback_query(filters.regex("join"))
-def join(client, callback_query):
+@app.on_callback_query(filters.regex("vtrds"))
+def vtrds(client, callback_query):
     if callback_query.message.chat.id in game_state:
         if callback_query.from_user.first_name != game_state[callback_query.message.chat.id]["player1"]["name"]:
             game_state[callback_query.message.chat.id]["player2"]["name"] = callback_query.from_user.first_name
