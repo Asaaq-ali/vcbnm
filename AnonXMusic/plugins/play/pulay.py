@@ -27,7 +27,7 @@ from AnonXMusic.utils.inline import (
     track_markup,
    ) 
 from AnonXMusic.utils.logger import play_logs
-from AnonXMusic import stream
+from AnonXMusic.utils.stream.stream import stream
 
 # Command
 
