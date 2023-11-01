@@ -1,6 +1,5 @@
 
 import config
-from config import PRIVATE_BOT_MODE
 from AnonXMusic.core.mongo import mongodb
 
 channeldb = mongodb.cplaymode
