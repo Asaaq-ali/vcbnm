@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS
 from AnonXMusic import app
-from AnonXMusic.utils.databasea import set_cmode
+from AnonXMusic.utils.database import set_cmode
 from AnonXMusic.utils.decorators.admins import AdminActual
 
 ### Multi-Lang Commands
