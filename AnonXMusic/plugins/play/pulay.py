@@ -11,7 +11,7 @@ from AnonXMusic.utils.decorators.admins import AdminActual
 
 @app.on_message(
     filters.command(["غني","قناه"],"")
-    & filters.group
+    & filters.channel
     & ~BANNED_USERS
 )
 @AdminActual
