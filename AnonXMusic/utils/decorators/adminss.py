@@ -34,44 +34,44 @@ def AdminRightsCheck(mystic):
             _ = get_string(language)
         except:
             _ = get_string("en")
-        if message.sender_chat:
-            upl = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="How to Fix this? ",
-                            callback_data="AnonymousAdmin",
-                        ),
-                    ]
-                ]
-            )
-            return await message.reply_text(
-                _["general_4"], reply_markup=upl
-            )
-        if message.command[0][0] == "c" or message.command[0][0] == "#":
-            chat_id = await get_cmode(message.chat.id)
-            if chat_id is None:
-                return await message.reply_text(_["setting_12"])
-            try:
-                await app.get_chat(chat_id)
-            except:
-                return await message.reply_text(_["cplay_4"])
-        else:
-            chat_id = message.chat.id
-        if not await is_active_chat(chat_id):
-            return await message.reply_text(_["general_6"])
-        is_non_admin = await is_nonadmin_chat(message.chat.id)
-        if not is_non_admin:
-            if message.from_user.id not in SUDOERS:
-                admins = adminlist.get(message.chat.id)
-                if not admins:
-                    return await message.reply_text(_["admin_18"])
-                else:
-                    if message.from_user.id not in admins:
-                        return await message.reply_text(_["admin_19"])
-        return await mystic(client, message, _, chat_id)
+   #     if message.sender_chat:
+    #        upl = InlineKeyboardMarkup(
+    #            [
+    #                [
+    #                    InlineKeyboardButton(
+     #                       text="How to Fix this? ",
+    #                        callback_data="AnonymousAdmin",
+    #                    ),
+    #                ]
+    #            ]
+    #        )
+    #        return await message.reply_text(
+    #            _["general_4"], reply_markup=upl
+   #         )
+    #    if message.command[0][0] == "c" or message.command[0][0] == "#":
+    #        chat_id = await get_cmode(message.chat.id)
+    #        if chat_id is None:
+      #          return await message.reply_text(_["setting_12"])
+      #      try:
+      #          await app.get_chat(chat_id)
+    #        except:
+    #            return await message.reply_text(_["cplay_4"])
+   #     else:
+    #        chat_id = message.chat.id
+    #    if not await is_active_chat(chat_id):
+    #        return await message.reply_text(_["general_6"])
+   #     is_non_admin = await is_nonadmin_chat(message.chat.id)
+    #    if not is_non_admin:
+    #        if message.from_user.id not in SUDOERS:
+     #           admins = adminlist.get(message.chat.id)
+     #           if not admins:
+     #               return await message.reply_text(_["admin_18"])
+      #          else:
+       #             if message.from_user.id not in admins:
+     #                   return await message.reply_text(_["admin_19"])
+    #    return await mystic(client, message, _, chat_id)
 
-    return wrapper
+   # return wrapper
 
 
 def AdminRightsCheckCB(mystic):
@@ -141,20 +141,20 @@ def AdminActual(mystic):
         #     return await message.reply_text(
         #         _["general_4"], reply_markup=upl
         #     )
-        if not message.sender_chat:
-            if message.from_user.id not in SUDOERS:
-                try:
-                    member = await app.get_chat_member(
-                        message.chat.id, message.from_user.id
-                    )
-                except:
-                    return
-                if not member.can_manage_voice_chats:
-                    return await message.reply(_["general_5"])
+        #if not message.sender_chat:
+        #    if message.from_user.id not in SUDOERS:
+         #       try:
+        #            member = await app.get_chat_member(
+        #                message.chat.id, message.from_user.id
+        #            )
+       #         except:
+         #           return
+         #       if not member.can_manage_voice_chats:
+        #            return await message.reply(_["general_5"])
 
-        return await mystic(client, message, _)
+      #  return await mystic(client, message, _)
 
-    return wrapper
+ #   return wrapper
 
 
 def ActualAdminCB(mystic):
