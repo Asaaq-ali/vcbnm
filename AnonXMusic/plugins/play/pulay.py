@@ -15,7 +15,7 @@ from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
 from AnonXMusic.core.call import Anony
 from AnonXMusic.utils import seconds_to_min, time_to_seconds
 from AnonXMusic.utils.channelplay import get_channeplayCB
-from AnonXMusic.utils.database import is_video_allowed
+from AnonXMusic.utils.databasea import is_video_allowed
 from AnonXMusic.utils.decorators.language import languageCB
 from AnonXMusic.utils.decorators.play import PlayWrapper
 from AnonXMusic.utils.formatters import formats
