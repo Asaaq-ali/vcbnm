@@ -14,7 +14,6 @@ from AnonXMusic.utils.decorators.admins import AdminActual
     & filters.channel
     & ~BANNED_USERS
 )
-@AdminActual
 async def playmode_(client, message: Message, _):
     if len(message.command) < 2:
         return await message.reply_text(
