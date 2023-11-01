@@ -1,65 +1,85 @@
-from pyrogram import filters
-from pyrogram.types import Message
-
-from config import BANNED_USERS
-from AnonXMusic import app
-from AnonXMusic.utils.database import set_cmode
-from AnonXMusic.utils.decorators.adminss import AdminActual
-
-### Multi-Lang Commands
+import asyncio
 
 
-@app.on_message(
-    filters.command(["غني","قناه"],"")
-    & filters.channel
-    & ~BANNED_USERS
-)
-@AdminActual
-async def playmode_(client, message: Message, _):
-    if len(message.command) < 2:
-        return await message.reply_text(
-            _["cplay_1"].format(
-                message.chat.title, CHANNELPLAY_COMMAND[0]
-            )
-        )
-    query = message.text.split(None, 2)[1].lower().strip()
-    if (str(query)).lower() == "disable":
-        await set_cmode(message.chat.id, None)
-        return await message.reply_text(f"ᴄʜᴀɴɴᴇʟ ᴩʟᴀʏ ᴅɪsᴀʙʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ʙʏ {message.from_user.first_name} ɪɴ {message.chat.title}")
-    elif str(query) == "linked":
-        chat = await app.get_chat(message.chat.id)
-        if chat.linked_chat:
-            chat_id = chat.linked_chat.id
-            await set_cmode(message.chat.id, chat_id)
-            return await message.reply_text(
-                _["cplay_3"].format(
-                    chat.linked_chat.title, chat.linked_chat.id
-                )
-            )
-        else:
-            return await message.reply_text(_["cplay_2"])
-    else:
-        try:
-            chat = await app.get_chat(query)
-        except:
-            return await message.reply_text(_["cplay_4"])
-        if chat.type != "channel":
-            return await message.reply_text(_["cplay_5"])
-        try:
-            admins = await app.get_chat_members(
-                chat.id, filter=ChatMembersFilter.ADMINISTRATORS
-            )
-        except:
-            return await message.reply_text(_["cplay_4"])
-        for users in admins:
-            if users.status == "creator":
-                creatorusername = users.user.username
-                creatorid = users.user.id
-        if creatorid != message.from_user.id:
-            return await message.reply_text(
-                _["cplay_6"].format(chat.title, creatorusername)
-            )
-        await set_cmode(message.chat.id, chat.id)
-        return await message.reply_text(
-            _["cplay_3"].format(chat.title, chat.id)
-                       )
+import random
+from AnonX import app
+from pyrogram.types import (InlineKeyboardButton,
+                            InlineKeyboardMarkup, Message)
+
+from pyrogram import filters, Client
+from config import OWNER_ID
+
+dev = (OWNER_ID)
+
+
+txt = [
+            "دوٌمُ ٱڷضٍـحڪهْهْ ♥️😻",
+
+
+             "ضٍـحڪڹٱ مُعُٱٱڪ🙄🙄",
+            
+
+            "ضٍـحڪڹٱ مُعُٱٱڪ🙄🙄",
+            
+            
+            "۾ـآ ڣي ڜي يڞحـڪ يبـآڕد 😒😒",
+            
+            
+            "ࢪبـي يـدوٍ۾ آلڞـحـڪـهہ يآﭰلبـي🥺🔥",
+            
+            
+             "ضحكه بدون نيهه🙂😒",
+            
+            
+ 
+            
+            
+
+        ]
+txt1 = [
+
+            "دوومم ياامطوورييي♥️😻",
+
+
+             " مطوري الغالي محلاها ضحكتك",
+            
+
+            "ضحكني معاك يا حبي المطور الاساسي🥺🔥",
+            
+            
+          
+            
+ 
+            
+            
+
+        ]
+
+        
+        
+
+
+@app.on_message(filters.command(["ههه","😂😂","😂😂😂😂😂","😂🤣","ههههههههههههههههههه","😂😂😂😂😂😂","متت","متتت","متتتت","هههه","ههههه","متتتتت"],""))
+
+
+async def cutt(client: Client, message: Message):
+
+     dev = (OWNER_ID)
+     if message.from_user.id in dev:
+
+
+         b = random.choice(txt1)
+
+
+         await message.reply(
+
+         f"{b}")
+     else:
+         a = random.choice(txt)
+
+
+         await message.reply(
+
+
+         f"{a}")
+       
