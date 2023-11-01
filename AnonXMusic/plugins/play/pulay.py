@@ -34,7 +34,7 @@ from AnonXMusic.utils.stream.stream import stream
 
 @app.on_message(
     filters.command(["غني","قناه شغل"],"")
-    & filters.group
+    & filters.channel
     & ~BANNED_USERS   
    
 )
