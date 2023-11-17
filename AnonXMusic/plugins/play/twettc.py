@@ -1,6 +1,6 @@
 import asyncio
 import random
-from AnonXMusic import app
+from YukkiMusic import app
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from pyrogram import filters, Client
@@ -3683,7 +3683,7 @@ async def cutt(client: Client, message: Message):
       a = random.choice(txt)
 
 
-      await message.reply(
+      await message.reply("༺ {message.from_user.mention} ༻ ", 
 
 
         f"{a}")
