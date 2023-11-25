@@ -12,7 +12,7 @@ psutil~=5.9.6
 py-tgcalls~=1.0.2
 ntgcalls~=1.0.0.dev20
 pykeyboard~=0.1.5
-git+https://github.com/Asaaq-ali/PyrogramMod@main
+pyrogramm==2.0.515
 python-dotenv~=1.0.0
 pyyaml~=6.0.1
 requests~=2.31.0
